@@ -16,6 +16,9 @@ class CoreModel extends Model
     
     public $incrementing = false;
 
+    public $hidden = ['count', 'created_at', 'updated_at', 'deleted_at'];
+
+
     /** 
      *  Generates Uuid if the entry doesn't have one
      *
