@@ -2,7 +2,7 @@
 
 use Illuminate\Routing\Controller;
 
-class PermissionsController extends Controller {
+class PermissionsController extends ApiController {
 
 	/**
 	 * Display a listing of the resource.

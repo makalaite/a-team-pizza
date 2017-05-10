@@ -1,8 +1,9 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\Pizzas;
 use Illuminate\Routing\Controller;
 
-class PizzasController extends Controller {
+class PizzasController extends ApiController {
 
 	/**
 	 * Display a listing of the resource.
@@ -26,6 +27,15 @@ class PizzasController extends Controller {
 		//
 	}
 
+    /**
+     *
+     */
+
+	public function apiCreate()
+    {
+
+    }
+
 	/**
 	 * Store a newly created resource in storage.
 	 * POST /pizzas
@@ -37,6 +47,15 @@ class PizzasController extends Controller {
 		//
 	}
 
+    /**
+     *
+     */
+
+	public function apiStore()
+    {
+
+    }
+
 	/**
 	 * Display the specified resource.
 	 * GET /pizzas/{id}
@@ -44,10 +63,24 @@ class PizzasController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
-	{
-		//
-	}
+    public function show($id)
+    {
+        $configuration['record'] = Pizzas::find($id);
+
+        return view('single', $configuration);
+    }
+
+    /**
+     * @param int $id
+     * @return mixed
+     */
+
+	public function apiShow($id)
+    {
+        return Pizzas::find($id);
+    }
+
+
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -56,10 +89,20 @@ class PizzasController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
+
+
 	public function edit($id)
 	{
 		//
 	}
+
+    /**
+     *
+     */
+    public  function apiEdit()
+    {
+
+    }
 
 	/**
 	 * Update the specified resource in storage.
@@ -72,6 +115,14 @@ class PizzasController extends Controller {
 	{
 		//
 	}
+
+    /**
+     *
+     */
+	public function apiUpdate()
+    {
+
+    }
 
 	/**
 	 * Remove the specified resource from storage.

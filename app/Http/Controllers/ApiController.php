@@ -1,86 +1,66 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\CoreModel;
 use Illuminate\Routing\Controller;
 
-class RolesController extends ApiController {
+class ApiController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /roles
+	 * GET /api
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function apiIndex()
 	{
 		//
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /roles/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /roles
+	 * POST /api
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function apiStore()
 	{
 		//
 	}
 
 	/**
 	 * Display the specified resource.
-	 * GET /roles/{id}
+	 * GET /api/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function apiShow($id)
 	{
 		//
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /roles/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /roles/{id}
+	 * PUT /api/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function apiUpdate($id)
 	{
 		//
 	}
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /roles/{id}
+	 * DELETE /api/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function apiDestroy($id)
 	{
 		//
 	}

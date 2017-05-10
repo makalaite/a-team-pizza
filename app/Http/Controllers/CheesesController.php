@@ -2,7 +2,7 @@
 
 use Illuminate\Routing\Controller;
 
-class CheesesController extends Controller {
+class CheesesController extends ApiController {
 
 	/**
 	 * Display a listing of the resource.
