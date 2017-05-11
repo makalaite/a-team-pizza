@@ -10,7 +10,7 @@ class IngredientsController extends APIbaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function admIndex()
 	{
 		//
 	}
@@ -21,7 +21,7 @@ class IngredientsController extends APIbaseController {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function admCreate()
 	{
 		//
 	}
@@ -32,7 +32,7 @@ class IngredientsController extends APIbaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function admStore()
 	{
 		//
 	}
@@ -44,7 +44,7 @@ class IngredientsController extends APIbaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function admShow($id)
 	{
 		//
 	}
@@ -56,7 +56,7 @@ class IngredientsController extends APIbaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function admEdit($id)
 	{
 		//
 	}
@@ -68,7 +68,7 @@ class IngredientsController extends APIbaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function admUpdate($id)
 	{
 		//
 	}
@@ -80,7 +80,7 @@ class IngredientsController extends APIbaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function admDestroy($id)
 	{
 		//
 	}

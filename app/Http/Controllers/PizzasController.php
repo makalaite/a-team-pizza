@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\Pizzas;
 use Illuminate\Routing\Controller;
 
 class PizzasController extends APIbaseController {
@@ -12,16 +13,26 @@ class PizzasController extends APIbaseController {
 	 */
 	public function index()
 	{
-	    
+	    return view('frontEnd');
 	}
+
+    /**
+     *
+     */
+
+    public function admIndex()
+    {
+        return view('adminList');
+    }
 
 	/**
 	 * [apiIndex description]
 	 * @return [type] [description]
 	 */
+
     public function apiIndex()
     {
-        return "jason";
+        return Pizzas::get()->toArray();
     }
 
 	/**
@@ -35,6 +46,22 @@ class PizzasController extends APIbaseController {
 		//
 	}
 
+    /**
+     *
+     */
+	public function admCreate()
+    {
+
+    }
+
+    /**
+     *
+     */
+    public function apiCreate()
+    {
+
+    }
+
 	/**
 	 * Store a newly created resource in storage.
 	 * POST /pizzas
@@ -45,6 +72,15 @@ class PizzasController extends APIbaseController {
 	{
 		//
 	}
+
+    /**
+     *
+     */
+
+	public function admStore()
+    {
+
+    }
 
 	/**
 	 * [apiStore description]
@@ -66,6 +102,16 @@ class PizzasController extends APIbaseController {
 	{
 		//
 	}
+
+    /**
+     *
+     */
+
+	public function admShow()
+    {
+
+    }
+
 	/**
 	 * [apiShow description]
 	 * @param  [type] $id [description]
@@ -88,6 +134,24 @@ class PizzasController extends APIbaseController {
 		//
 	}
 
+    /**
+     *
+     */
+
+	public function admEdit()
+    {
+
+    }
+
+    /**
+     *
+     */
+
+    public function apiEdit()
+    {
+
+    }
+
 	/**
 	 * Update the specified resource in storage.
 	 * PUT /pizzas/{id}
@@ -99,6 +163,11 @@ class PizzasController extends APIbaseController {
 	{
 		//
 	}
+
+	public function admUpdate()
+    {
+
+    }
 
 	/**
 	 * [apiUpdate description]
@@ -121,6 +190,15 @@ class PizzasController extends APIbaseController {
 	{
 		//
 	}
+
+    /**
+     *
+     */
+
+	public function admDestroy()
+    {
+
+    }
 
 	/**
 	 * [apiDestroy description]
