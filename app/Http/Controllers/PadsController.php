@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\Pads;
 use Illuminate\Routing\Controller;
 
 class PadsController extends APIbaseController {
@@ -12,7 +13,9 @@ class PadsController extends APIbaseController {
 	 */
 	public function admIndex()
 	{
-		//
+        $configuration = [];
+        $configuration['list'] = Pads::get()->toArray();
+        return view('admin.list', $configuration);
 	}
 
 	/**

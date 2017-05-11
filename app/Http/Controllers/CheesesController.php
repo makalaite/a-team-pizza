@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\Cheeses;
 use Illuminate\Routing\Controller;
 
 class CheesesController extends APIbaseController {
@@ -12,7 +13,9 @@ class CheesesController extends APIbaseController {
 	 */
 	public function admIndex()
 	{
-		//
+        $configuration = [];
+        $configuration['list'] = Cheeses::get()->toArray();
+        return view('admin.list', $configuration);
 	}
 
 	/**

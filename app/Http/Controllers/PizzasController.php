@@ -13,16 +13,16 @@ class PizzasController extends APIbaseController {
 	 */
 	public function index()
 	{
-	    return view('frontEnd');
+	    return view('frontend.list');
 	}
 
     /**
-     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
 
     public function admIndex()
     {
-        return view('adminList');
+        return view('admin.list');
     }
 
 	/**

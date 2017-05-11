@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\Ingredients;
 use Illuminate\Routing\Controller;
 
 class IngredientsController extends APIbaseController {
@@ -12,7 +13,12 @@ class IngredientsController extends APIbaseController {
 	 */
 	public function admIndex()
 	{
-		//
+	    $configuration = [];
+		$configuration['list'] = Ingredients::get()->toArray();
+		$configuration['editRoute'] = 'app.ingredients.edit';
+		$configuration['deleteRoute'] = 'app.ingredients.destroy';
+
+		return view('admin.list', $configuration);
 	}
 
 	/**
@@ -58,7 +64,8 @@ class IngredientsController extends APIbaseController {
 	 */
 	public function admEdit($id)
 	{
-		//
+
+
 	}
 
 	/**
