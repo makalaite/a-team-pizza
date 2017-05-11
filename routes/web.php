@@ -21,101 +21,101 @@ Route::group(['prefix' => 'admin'], function (){
 
    Route::group(['prefix' => 'cheeses'], function (){
 
-       Route::get('/', ['as' => 'app.cheeses.index', 'uses' => 'CheesesController@index']);
-       Route::get('/create', ['as' => 'app.cheeses.create', 'uses' => 'CheesesController@create']);
-       Route::post('/create', [ 'uses' => 'CheesesController@store']);
+       Route::get('/', ['as' => 'app.cheeses.index', 'uses' => 'CheesesController@admIndex']);
+       Route::get('/create', ['as' => 'app.cheeses.create', 'uses' => 'CheesesController@admCreate']);
+       Route::post('/create', [ 'uses' => 'CheesesController@admStore']);
 
        Route::group(['prefix' => '{id}'], function () {
 
-           Route::get('/', ['uses' => 'CheesesController@show']);
-           Route::get('/edit', ['as' => 'app.cheeses.edit','uses' => 'CheesesController@edit']);
-           Route::post('/edit', [ 'uses' => 'CheesesController@update']);
-           Route::delete('/delete', ['as' => 'app.cheeses.destroy', 'uses' => 'CheesesController@destroy']);
+           Route::get('/', ['uses' => 'CheesesController@admShow']);
+           Route::get('/edit', ['as' => 'app.cheeses.edit','uses' => 'CheesesController@admEdit']);
+           Route::post('/edit', [ 'uses' => 'CheesesController@admUpdate']);
+           Route::delete('/delete', ['as' => 'app.cheeses.destroy', 'uses' => 'CheesesController@admDestroy']);
        });
    });
 
     Route::group(['prefix' => 'ingredients'], function () {
 
-        Route::get('/', ['as' => 'app.ingredients.index', 'uses' => 'IngredientsController@index']);
-        Route::get('/create', ['as' => 'app.ingredients.create', 'uses' => 'IngredientsController@create']);
-        Route::post('/create', ['uses' => 'IngredientsController@store']);
+        Route::get('/', ['as' => 'app.ingredients.index', 'uses' => 'IngredientsController@admIndex']);
+        Route::get('/create', ['as' => 'app.ingredients.create', 'uses' => 'IngredientsController@admCreate']);
+        Route::post('/create', ['uses' => 'IngredientsController@admStore']);
 
         Route::group(['prefix' => '{id}'], function () {
 
-            Route::get('/', [ 'uses' => 'IngredientsController@show']);
-            Route::get('/edit', ['as' => 'app.ingredients.edit', 'uses' => 'IngredientsController@edit']);
-            Route::post('/edit', [ 'uses' => 'IngredientsController@update']);
-            Route::delete('/delete', ['as' => 'app.ingredients.destroy', 'uses' => 'IngredientsController@destroy']);
+            Route::get('/', [ 'uses' => 'IngredientsController@admShow']);
+            Route::get('/edit', ['as' => 'app.ingredients.edit', 'uses' => 'IngredientsController@admEdit']);
+            Route::post('/edit', [ 'uses' => 'IngredientsController@admUpdate']);
+            Route::delete('/delete', ['as' => 'app.ingredients.destroy', 'uses' => 'IngredientsController@admDestroy']);
         });
     });
 
     Route::group(['prefix' => 'pads'], function () {
 
-        Route::get('/', ['as' => 'app.pads.index', 'uses' => 'PadsController@index']);
-        Route::get('/create', ['as' => 'app.pads.create', 'uses' => 'PadsController@create']);
-        Route::post('/create', ['uses' => 'PadsController@store']);
+        Route::get('/', ['as' => 'app.pads.index', 'uses' => 'PadsController@admIndex']);
+        Route::get('/create', ['as' => 'app.pads.create', 'uses' => 'PadsController@admCreate']);
+        Route::post('/create', ['uses' => 'PadsController@admStore']);
 
         Route::group(['prefix' => '{id}'], function () {
 
-            Route::get('/', [ 'uses' => 'PadsController@show']);
-            Route::get('/edit', ['as' => 'app.pads.edit', 'uses' => 'PadsController@edit']);
-            Route::post('/edit', ['uses' => 'PadsController@update']);
-            Route::delete('/delete', ['as' => 'app.pads.destroy', 'uses' => 'PadsController@destroy']);
+            Route::get('/', [ 'uses' => 'PadsController@admShow']);
+            Route::get('/edit', ['as' => 'app.pads.edit', 'uses' => 'PadsController@admEdit']);
+            Route::post('/edit', ['uses' => 'PadsController@admUpdate']);
+            Route::delete('/delete', ['as' => 'app.pads.destroy', 'uses' => 'PadsController@admDestroy']);
         });
     });
 
     Route::group(['prefix' => 'permissions'], function () {
 
-        Route::get('/', ['uses' => 'PermissionsController@index']);
-        Route::get('/create', ['as' => 'app.permissions.create', 'uses' => 'PermissionsController@create']);
-        Route::post('/create', ['uses' => 'PermissionsController@store']);
+        Route::get('/', ['uses' => 'PermissionsController@admIndex']);
+        Route::get('/create', ['as' => 'app.permissions.create', 'uses' => 'PermissionsController@admCreate']);
+        Route::post('/create', ['uses' => 'PermissionsController@admStore']);
 
         Route::group(['prefix' => '{id}'], function () {
 
-        	Route::get('/', ['uses' => 'PermissionsController@show']);
-        	Route::get('/edit', ['as' => 'app.permissions.edit', 'uses' => 'PermissionsController@edit']);
-        	Route::post('/edit', ['uses' => 'PermissionsController@update']);
-        	Route::delete('/delete', ['as' => 'app.permissions.destroy', 'uses' => 'PermissionsController@destroy']);
+        	Route::get('/', ['uses' => 'PermissionsController@admShow']);
+        	Route::get('/edit', ['as' => 'app.permissions.edit', 'uses' => 'PermissionsController@admEdit']);
+        	Route::post('/edit', ['uses' => 'PermissionsController@admUpdate']);
+        	Route::delete('/delete', ['as' => 'app.permissions.destroy', 'uses' => 'PermissionsController@admDestroy']);
     	});
     });
     Route::group(['prefix' => 'pizzas'], function () {
 
-        Route::get('/', ['uses' => 'PizzasController@index']);
-        Route::get('/create', ['as' => 'app.pizzas.create', 'uses' => 'PizzasController@create']);
-        Route::post('/create', ['uses' => 'PizzasController@store']);
+        Route::get('/', ['uses' => 'PizzasController@admIndex']);
+        Route::get('/create', ['as' => 'app.pizzas.create', 'uses' => 'PizzasController@admCreate']);
+        Route::post('/create', ['uses' => 'PizzasController@admStore']);
 
         Route::group(['prefix' => '{id}'], function () {
 
-        	Route::get('/', ['uses' => 'PizzasController@show']);
-        	Route::get('/edit', ['as' => 'app.pizzas.edit','uses' => 'PizzasController@edit']);
+        	Route::get('/', ['uses' => 'PizzasController@admShow']);
+        	Route::get('/edit', ['as' => 'app.pizzas.edit','uses' => 'PizzasController@admEdit']);
         	Route::post('/edit', [ 'uses' => 'PizzasController@update']);
-        	Route::delete('/delete', ['as' => 'app.pizzas.destroy', 'uses' => 'PizzasController@destroy']);
+        	Route::delete('/delete', ['as' => 'app.pizzas.destroy', 'uses' => 'PizzasController@admDestroy']);
     	});
     });
     Route::group(['prefix' => 'roles'], function () {
-        Route::get('/', ['uses' => 'RolesController@index']);
-        Route::get('/create', ['as' => 'app.roles.create', 'uses' => 'RolesController@create']);
-        Route::post('/create', ['uses' => 'RolesController@store']);
+        Route::get('/', ['uses' => 'RolesController@admIndex']);
+        Route::get('/create', ['as' => 'app.roles.create', 'uses' => 'RolesController@admCreate']);
+        Route::post('/create', ['uses' => 'RolesController@admStore']);
 
         Route::group(['prefix' => '{id}'], function () {
 
-        	Route::get('/', ['uses' => 'RolesController@show']);
-        	Route::get('/edit', ['as' => 'app.roles.edit', 'uses' => 'RolesController@edit']);
-        	Route::post('/edit', [ 'uses' => 'RolesController@update']);
-        	Route::delete('/delete', ['as' => 'app.roles.destroy', 'uses' => 'RolesController@destroy']);
+        	Route::get('/', ['uses' => 'RolesController@admShow']);
+        	Route::get('/edit', ['as' => 'app.roles.edit', 'uses' => 'RolesController@admEdit']);
+        	Route::post('/edit', [ 'uses' => 'RolesController@admUpdate']);
+        	Route::delete('/delete', ['as' => 'app.roles.destroy', 'uses' => 'RolesController@admDestroy']);
         });
     });
     Route::group(['prefix' => 'users'], function () {
-        Route::get('/', ['uses' => 'UsersController@index']);
-        Route::get('/create', ['as' => 'app.users.create', 'uses' => 'UsersController@create']);
-        Route::post('/create', ['uses' => 'UsersController@store']);
+        Route::get('/', ['uses' => 'UsersController@admIndex']);
+        Route::get('/create', ['as' => 'app.users.create', 'uses' => 'UsersController@admCreate']);
+        Route::post('/create', ['uses' => 'UsersController@admStore']);
 
         Route::group(['prefix' => '{id}'], function () {
 
-        	Route::get('/', ['uses' => 'UsersController@show']);
-        	Route::get('/edit', ['as' => 'app.users.edit','uses' => 'UsersController@edit']);
-        	Route::post('/edit', [ 'uses' => 'UsersController@update']);
-        	Route::delete('/delete', ['as' => 'app.users.destroy', 'uses' => 'UsersController@destroy']);
+        	Route::get('/', ['uses' => 'UsersController@admShow']);
+        	Route::get('/edit', ['as' => 'app.users.edit','uses' => 'UsersController@admEdit']);
+        	Route::post('/edit', [ 'uses' => 'UsersController@admUpdate']);
+        	Route::delete('/delete', ['as' => 'app.users.destroy', 'uses' => 'UsersController@admDestroy']);
     	});
     });
 });
