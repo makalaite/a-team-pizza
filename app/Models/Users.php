@@ -15,6 +15,8 @@ class Users extends Authenticatable
 {
     use Notifiable;
 
+    public $incrementing = false;
+
     protected $table = 'pz_users';
     /**
      * The attributes that are mass assignable.
@@ -30,4 +32,9 @@ class Users extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function role() {
+
+        return $this->belongsToMany(Roles::class, 'pz_connections_users_roles', 'user_id', 'role_id' );
+    }
 }

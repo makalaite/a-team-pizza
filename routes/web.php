@@ -125,8 +125,9 @@ Route::group(['prefix' => 'admin'], function (){
 Route::group(['prefix' => 'pizzas'], function () {
 
     Route::get('/', ['uses' => 'PizzasController@index']);
-    Route::get('/create', ['as' => 'app.pizzas.create', 'uses' => 'PizzasController@create']);
+    Route::get('/create', ['middleware' => ['auth', 'roles'], 'as' => 'app.pizzas.create', 'uses' => 'PizzasController@create']);
 	Route::post('/create', ['uses' => 'PizzasController@store']);
+
 
     Route::group(['prefix' => '{id}'], function () {
 

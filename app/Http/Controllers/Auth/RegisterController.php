@@ -52,6 +52,8 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:pz_users',
             'password' => 'required|string|min:6|confirmed',
+            'phone' => 'required|digits:8',
+            'address' => 'required|string|max:255',
         ]);
     }
 
@@ -63,12 +65,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Users::create([
+//        dd($data);
+        $record = Users::create([
             'id' => Uuid::uuid4(),
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'phone' => $data['phone']
+            'phone' => $data['phone'],
+            'address' => $data['address']
         ]);
+        $record->role()->sync(['user', 'member']);
+        return $record;
     }
+
 }
