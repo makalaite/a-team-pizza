@@ -44,16 +44,16 @@
         <div class="col-md-12">
             @if(!isset($pizzas[0]['pizza_topping']))
                 @foreach($toppings as $key => $topping)
-                    <label>
-                        {{ Form::checkbox('toppings[]', $key) }}
-                            @if($key == $superIngredient)
-                            <b>{{$topping}}</b>
-                            @else
-                                {{$topping}}
-                            @endif
+                            <label>
+                                {{ Form::checkbox('toppings[]', $key) }}
+                                @if($key == $superIngredient)
+                                    <i>{{$topping}}</i>
+                                @else
+                                    {{$topping}}
+                                @endif
 
-
-                    </label><br>
+                            </label>
+                   <br>
                 @endforeach
             @endif
 
