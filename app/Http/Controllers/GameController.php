@@ -45,8 +45,6 @@ class GameController extends Controller {
             "recourse_id" => $record->id
         ]);
 
-		dd($record);
-
 	}
 
 	/**
