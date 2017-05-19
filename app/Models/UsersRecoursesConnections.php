@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UsersRecoursesConnections extends Model
+class UsersRecoursesConnections extends CoreModel
 {
     protected $table = 'pz_users_recourses_connections';
 
-    protected $fillable = ['user_id', 'recourse_id'];
+    protected $fillable = ['id', 'user_id', 'recourse_id'];
 }
