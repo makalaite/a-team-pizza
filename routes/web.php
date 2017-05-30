@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//admin-permissions
 
-
-Route::group(['prefix' => 'admin'], function (){
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin-permissions']], function (){
 
    Route::group(['prefix' => 'cheeses'], function (){
 

@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class RollCheck
+class RoleMemberCheck
 {
     /**
      * Handle an incoming request.
@@ -15,8 +15,10 @@ class RollCheck
      */
     public function handle($request, Closure $next)
     {
+        $userRoles = auth()->user()->role->pluck('id')->toArray();
+
         //dd(auth()->user()->role()->pluck('id'));
-        if (in_array('member', auth()->user()->role->pluck('id')->toArray())) {
+        if (in_array('member', $userRoles) || in_array('super-admin', $userRoles)) {
             return $next($request);
         } else {
             abort(403, 'Access denied');
